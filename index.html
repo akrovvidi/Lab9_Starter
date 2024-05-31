@@ -102,6 +102,59 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    errorBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      let methodName = btn.innerText.replace('Console ', '').toLowerCase();
+      let data = { message: 'Example data for demonstration' }; 
+  
+      switch (methodName) {
+        case ' Log':
+          console.log("Example demo for console log");
+          break;
+        case 'error':
+          console.error(data);
+          break;
+        case 'Count':
+          console.count('Counter');
+          break;
+        case 'Warn':
+          console.warn(data);
+          break;
+        case 'Assert':
+          console.assert(false, data);
+          break;
+        case 'Clear':
+          console.clear();
+          break;
+        case 'Dir':
+          console.dir(data);
+          break;
+        case 'dirxml':
+          console.dirxml(document);
+          break;
+        case 'Group Start':
+          console.group('Group');
+          console.log('Group start');
+          break;
+        case 'Group End':
+          console.groupEnd();
+          break;
+        case 'Table':
+          console.table([data, data]);
+          break;
+        case 'Start Timer':
+          console.time('Timer');
+          break;
+        case 'End Timer':
+          console.timeEnd('Timer');
+          break;
+        case 'Trace':
+          console.trace();
+          break;
+      }
+    });
+  });
+    
   </script>
 </body>
 
